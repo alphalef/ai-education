@@ -1,5 +1,6 @@
 function submitQuestion() {
     let question = document.getElementById('question').value;
+    let logfile = document.getElementById('logfile').value;
 
     // 스피너 표시 및 제출 버튼 숨기기
     document.getElementById('spinner').style.display = 'inline-block';
@@ -10,7 +11,7 @@ function submitQuestion() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 'question': question })
+        body: JSON.stringify({ 'question': question, 'logfile': logfile })
     }).then(response => response.json())
     .then(data => {
         // 응답 받으면 스피너 숨기기 및 제출 버튼 표시

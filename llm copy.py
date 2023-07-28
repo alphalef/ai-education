@@ -2,7 +2,6 @@ import os
 import gptauth
 import llama_index as ll
 from langchain import OpenAI
-from langchain.chat_models import ChatOpenAI
 import openai
 import logging
 import sys
@@ -10,8 +9,8 @@ import sys
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 
-os.environ["OPENAI_API_KEY"] = gptauth.apikey
-openai.api_key = os.environ["OPENAI_API_KEY"]
+# os.environ["OPENAI_API_KEY"] = gptauth.apikey
+openai.api_key = gptauth.apikey
 
 
 def loaddocs(dir):
@@ -21,10 +20,10 @@ def loaddocs(dir):
     return documents
 
 def indexdocs(docs):
-    llm_predictor = ll.LLMPredictor(llm=ChatOpenAI(temperature=0.7, model_name="gpt-3.5-turbo"))
+    llm_predictor = ll.LLMPredictor(llm=OpenAI(temperature=0, model_name="text-davinci-003"))
 
-    max_input_size=4096
-    num_output=512
+    max_input_size=3900
+    num_output=256
     max_chunk_overlap=0.2
     prompt_helper=ll.PromptHelper(max_input_size, num_output, max_chunk_overlap)
     service_context = ll.ServiceContext.from_defaults(llm_predictor=llm_predictor, prompt_helper=prompt_helper)
