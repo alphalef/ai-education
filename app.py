@@ -69,3 +69,25 @@ def get_answer():
     store_question_answer(question, answer, filename)
 
     return jsonify({'answer': answer})
+
+@app.route('/get_genanswer', methods=['POST'])
+def get_genanswer():
+    data = request.get_json()
+    question = data['question1']
+
+    # 답변 생성 코드
+    answer = llm.gptgeneral(question)  # generate_answer는 답변을 생성하는 함수
+
+    # print(answer)
+
+    return answer
+
+@app.route('/create_img', methods=['POST'])
+def create_img():
+    data = request.get_json()
+    question = data['question2']
+
+    # 이미지 생성 코드
+    img = llm.createimg(question)  # generate_answer는 답변을 생성하는 함수
+
+    return img
