@@ -13,11 +13,11 @@ def create_log_file():
     filename = now.strftime('%Y-%m-%d_%H-%M-%S') + '.json'
 
     # 빈 딕셔너리 생성
-    empty_dict = {}
+    # empty_dict = {}
 
     # 빈 JSON 파일 생성
-    with open(filename, 'w') as f:
-        json.dump(empty_dict, f)
+    # with open(filename, 'w') as f:
+    #     json.dump(empty_dict, f)
 
     return filename
 
@@ -90,4 +90,4 @@ def create_img():
     # 이미지 생성 코드
     img = llm.createimg(question)  # generate_answer는 답변을 생성하는 함수
 
-    return img
+    return img 
