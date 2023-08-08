@@ -52,16 +52,18 @@ def store_question_answer(question, answer, filename):
 @app.route('/')
 def home():
     filename = create_log_file()
-    return render_template('index.html', value=filename)  # templates 폴더에서 index.html 파일을 찾습니다.
+    return render_template('index.html', value=filename) 
+
+@app.route('/after')
+def home():
+    filename = create_log_file()
+    return render_template('index2.html', value=filename)  
 
 @app.route('/get_answer', methods=['POST'])
 def get_answer():
     data = request.get_json()
     question = data['question']
-    filename = data['logfile']
-
-    print(question)
-    print(filename)
+    filename = 'post-' + data['logfile']
 
     # 답변 생성 코드
     answer = llm.gptanswer(question)  # generate_answer는 답변을 생성하는 함수
@@ -74,13 +76,26 @@ def get_answer():
 def get_genanswer():
     data = request.get_json()
     question = data['question1']
+    filename = 'pre-' + data['logfile1']
 
     # 답변 생성 코드
     answer = llm.gptgeneral(question)  # generate_answer는 답변을 생성하는 함수
 
-    # print(answer)
+    # 로그작성
+    store_question_answer(question, answer, filename) 
 
     return answer
+
+@app.route('/input_opinion', methods=['POST'])
+def input_opinion():
+    data = request.get_json()
+    opinion = data['opinion']
+    filename = 'opinion-' + data['logfile2']
+
+    # 로그작성
+    store_question_answer('', opinion, filename)
+
+    return '1'
 
 @app.route('/create_img', methods=['POST'])
 def create_img():

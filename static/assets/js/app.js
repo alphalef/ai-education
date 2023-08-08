@@ -21,8 +21,33 @@ function submitQuestion() {
     });
 }
 
+function submitOpinion() {
+    let opinion = document.getElementById('opinion').value;
+    let logfile = document.getElementById('logfile2').value;
+
+    // 스피너 표시 및 제출 버튼 숨기기
+    document.getElementById('spinner1').style.display = 'inline-block';
+    document.getElementById('submitBtn1').style.display = 'none';
+
+    fetch('/input_opinion', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ 'opinion': opinion, 'logfile2': logfile })
+    }).then(response => response.text())
+    .then(data => {
+        // 응답 받으면 스피너 숨기기 및 제출 버튼 표시
+        document.getElementById('spinner1').style.display = 'none';
+        document.getElementById('submitBtn1').style.display = 'inline-block';
+        alert('정상적으로 저장 되었습니다');
+    });
+}
+
+
 function submitQuestion1() {
     let question = document.getElementById('question1').value;
+    let logfile = document.getElementById('logfile1').value;
 
     // 스피너 표시 및 제출 버튼 숨기기
     document.getElementById('spinner1').style.display = 'inline-block';
@@ -33,7 +58,7 @@ function submitQuestion1() {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 'question1': question })
+        body: JSON.stringify({ 'question1': question, 'logfile1': logfile })
     }).then(response => response.text())
     .then(data => {
         // 응답 받으면 스피너 숨기기 및 제출 버튼 표시

@@ -55,6 +55,7 @@
 								<div class="col-md-12">
 									<h3 class="my-3">인공지능에게 질문해 보세요</h3>
 									<textarea id="question1" class="form-control" rows="4" style="height: 200px;"></textarea>
+									<input type="hidden" id="logfile1" value="{{ value }}">
 									<br>
 									<button id="submitBtn1" onclick="submitQuestion1()" class="button primary large">제출</button>
 									<div id="spinner1" class="spinner-border text-primary mt-3" role="status" style="display: none;">
@@ -80,10 +81,11 @@
 							</p>
 
 							<div class="col-md-12">
-								<textarea id="question1" class="form-control" rows="4" style="height: 200px;"></textarea>
+								<textarea id="opinion" class="form-control" rows="4" style="height: 200px;"></textarea>
+								<input type="hidden" id="logfile2" value="{{ value }}">
 								<br>
-								<button id="submitBtn1" onclick="submitQuestion1()" class="button primary large">제출</button>
-								<div id="spinner1" class="spinner-border text-primary mt-3" role="status" style="display: none;">
+								<button id="submitBtn2" onclick="submitOpinion()" class="button primary large">제출</button>
+								<div id="spinner2" class="spinner-border text-primary mt-3" role="status" style="display: none;">
 									<span class="sr-only">Loading...</span>
 								</div>
 							</div>
@@ -106,7 +108,7 @@
 
 								<br><br>
 					
-							<button id="submitBtn1" onclick="location.href='https://app.gather.town/app/W1pAWAsOGLwEw3gk/christian-liberal-arts'" class="button large">클래스로 이동</button>
+							<button id="submitBtn1" onclick="location.href='https://app.gather.town/app/GjyCcfCExzSotv2W/liberal'" class="button large">클래스로 이동</button>
 
 						</div>
 					</section>

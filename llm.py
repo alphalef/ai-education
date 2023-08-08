@@ -63,9 +63,8 @@ def gptgeneral(query):
         model=model,
         messages=messages
     )
-    answer = response['choices'][0]['message']['content']
+    answer = response['choices'][0]['message']['content'] 
 
-    print(answer)
     return answer
 
 def createimg(query):
