@@ -55,7 +55,7 @@ def home():
     return render_template('index.html', value=filename) 
 
 @app.route('/after')
-def home():
+def after():
     filename = create_log_file()
     return render_template('index2.html', value=filename)  
 

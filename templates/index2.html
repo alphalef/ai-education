@@ -36,151 +36,34 @@
 					</section>
 
 				<!-- Section -->
-					<section id="first">
-						<header>
-							<h2>기독교교양사전365 - 성서란</h2>
-						</header>
-						<div class="content">
-							<iframe width="100%" height="315" src="https://www.youtube.com/embed/W7zUtHqbNfA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-						</div>
-					</section>
-
-				<!-- Section -->
 					<section>
 						<header>
-							<h2>성서에 대해 질문해 봅시다.</h2>
+							<h2>공부한 내용을 토대로 질문해 봅시다.</h2>
 						</header>
 						<div class="content">
 							<div class="row">
 								<div class="col-md-12">
 									<h3 class="my-3">인공지능에게 질문해 보세요</h3>
-									<textarea id="question1" class="form-control" rows="4" style="height: 200px;"></textarea>
-									<input type="hidden" id="logfile1" value="{{ value }}">
+									<textarea id="question" class="form-control" rows="4" style="height: 200px;"></textarea>
+									<input type="hidden" id="logfile" value="{{ value }}">
 									<br>
-									<button id="submitBtn1" onclick="submitQuestion1()" class="button primary large">제출</button>
-									<div id="spinner1" class="spinner-border text-primary mt-3" role="status" style="display: none;">
+									<button id="submitBtn" onclick="submitQuestion()" class="button primary large">제출</button>
+									<div id="spinner" class="spinner-border text-primary mt-3" role="status" style="display: none;">
 										<span class="sr-only">Loading...</span>
 									</div>
 								</div>
 								<div class="col-md-12">
 									<h3 class="my-3">답변:</h3>
-									<div id="answer1" class="border p-3" style="min-height: 200px;"></div>
-								</div>
-							</div>
-						</div>
-					</section>
-
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>성서에 대한 자신의 생각을 짤막하게 정리해 봅니다.</h2>
-						</header>
-						<div class="content">
-							<p>
-								<strong>성서에</strong> 대해 들어본 적이 있나요? 오늘 영상 내용과 인공지능과의 대화를 통해 성서에 대해 새롭게 알게된 것이나 느낀점은 무엇입니까?
-							</p>
-
-							<div class="col-md-12">
-								<textarea id="opinion" class="form-control" rows="4" style="height: 200px;"></textarea>
-								<input type="hidden" id="logfile2" value="{{ value }}">
-								<br>
-								<button id="submitBtn2" onclick="submitOpinion()" class="button primary large">제출</button>
-								<div id="spinner2" class="spinner-border text-primary mt-3" role="status" style="display: none;">
-									<span class="sr-only">Loading...</span>
+									<div id="answer" class="border p-3" style="min-height: 200px;"></div>
 								</div>
 							</div>
 
-							<!-- Section -->
-								<!-- <section>
-									<header>
-										<h3>Erat aliquam</h3>
-										<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
-									</header>
-									<div class="content">
-										<div class="gallery">
-											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section> -->
-
-								<br><br>
-					
-							<button id="submitBtn1" onclick="location.href='https://app.gather.town/app/GjyCcfCExzSotv2W/liberal'" class="button large">클래스로 이동</button>
-
+							
+							<br><br>
+						
+							<button id="submitBtn1" onclick="location.href='https://app.gather.town/app/GjyCcfCExzSotv2W/liberal'" class="button large">위키 페이지로 이동</button>
 						</div>
 					</section>
-
-				<!-- Section -->
-					<!-- <section>
-						<header>
-							<h2>Duis sed adpiscing veroeros amet</h2>
-						</header>
-						<div class="content">
-							<p><strong>Proin tempus feugiat</strong> sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
-							<ul class="actions">
-								<li><a href="#" class="button primary large">Get Started</a></li>
-								<li><a href="#" class="button large">Learn More</a></li>
-							</ul>
-						</div>
-					</section> -->
-
-				<!-- Section -->
-					<!-- <section>
-						<header>
-							<h2>Get in touch</h2>
-						</header>
-						<div class="content">
-							<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
-							<form>
-								<div class="fields">
-									<div class="field half">
-										<input type="text" name="name" id="name" placeholder="Name" />
-									</div>
-									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
-									</div>
-									<div class="field">
-										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
-									</div>
-								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="button primary" /></li>
-								</ul>
-							</form>
-						</div>
-						<footer>
-							<ul class="items">
-								<li>
-									<h3>Email</h3>
-									<a href="#">information@untitled.ext</a>
-								</li>
-								<li>
-									<h3>Phone</h3>
-									<a href="#">(000) 000-0000</a>
-								</li>
-								<li>
-									<h3>Address</h3>
-									<span>1234 Somewhere Road, Nashville, TN 00000</span>
-								</li>
-								<li>
-									<h3>Elsewhere</h3>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
-									</ul>
-								</li>
-							</ul>
-						</footer>
-					</section> -->
-
-				<!-- Copyright -->
 
 					<br><br>
 

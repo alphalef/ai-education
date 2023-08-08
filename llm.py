@@ -23,7 +23,7 @@ def loaddocs(dir):
     return documents
 
 def indexdocs(docs):
-    llm_predictor = ll.LLMPredictor(llm=ChatOpenAI(temperature=0.7, model_name="gpt-3.5-turbo"))
+    llm_predictor = ll.LLMPredictor(llm=ChatOpenAI(temperature=0.7, model_name="text-davinci-003"))
 
     max_input_size=4096
     num_output=512
@@ -33,8 +33,8 @@ def indexdocs(docs):
     index = ll.GPTVectorStoreIndex.from_documents(docs, service_context=service_context)
     index.storage_context.persist(persist_dir="./indexed") 
 
-# docs = loaddocs('./data')
-# indexdocs(docs)
+docs = loaddocs('./data') 
+indexdocs(docs)
 
 def gptanswer(query):
     storage_context = ll.StorageContext.from_defaults(persist_dir="./indexed")
