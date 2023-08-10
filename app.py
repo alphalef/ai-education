@@ -22,7 +22,7 @@ def create_log_file():
     return filename
 
 def store_question_answer(question, answer, filename):
-    # 저장할 데이터 생성
+    # 저장할 데이터 생성 
     now = datetime.datetime.now()
     data = {
         'time': now.strftime('%Y-%m-%d %H:%M:%S'),

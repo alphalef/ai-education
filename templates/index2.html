@@ -16,6 +16,19 @@
 		<script src="{{ url_for('static', filename='assets/js/app.js') }}"></script>
 
 	</head>
+
+	<style>
+		#wrapper:before {
+			background-color: #4692DE;
+		}
+
+		input[type="submit"].primary, input[type="reset"].primary, input[type="button"].primary, button.primary, .button.primary {
+			background-color: #4692DE;
+			box-shadow: none;
+			color: #000000 !important;
+		}
+	</style>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -38,7 +51,7 @@
 				<!-- Section -->
 					<section>
 						<header>
-							<h2>공부한 내용을 토대로 질문해 봅시다.</h2>
+							<h2 id="first">공부한 내용을 토대로 질문해 봅시다.</h2>
 						</header>
 						<div class="content">
 							<div class="row">
