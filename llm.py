@@ -6,7 +6,7 @@ from langchain.chat_models import ChatOpenAI
 import openai
 import logging
 import sys
-from PyKakao import Karlo
+# from PyKakao import Karlo
 
 logging.basicConfig(stream=sys.stdout, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
@@ -14,7 +14,7 @@ logging.getLogger().addHandler(logging.StreamHandler(stream=sys.stdout))
 os.environ["OPENAI_API_KEY"] = gptauth.apikey
 openai.api_key = os.environ["OPENAI_API_KEY"]
 
-kakaoapi = Karlo(service_key = gptauth.kakaokey)
+# kakaoapi = Karlo(service_key = gptauth.kakaokey)
 
 def loaddocs(dir):
     SimpleDirectoryReader = ll.download_loader("SimpleDirectoryReader")
@@ -23,7 +23,7 @@ def loaddocs(dir):
     return documents
 
 def indexdocs(docs):
-    llm_predictor = ll.LLMPredictor(llm=ChatOpenAI(temperature=0.7, model_name="text-davinci-003"))
+    llm_predictor = ll.LLMPredictor(llm=ChatOpenAI(temperature=0.3, model_name="gpt-3.5-turbo"))
 
     max_input_size=4096
     num_output=512
@@ -67,14 +67,14 @@ def gptgeneral(query):
 
     return answer
 
-def createimg(query):
-    # 이미지 생성하기 REST API 호출
-    img_dict = kakaoapi.text_to_image(query, 1)
+# def createimg(query):
+#     # 이미지 생성하기 REST API 호출
+#     img_dict = kakaoapi.text_to_image(query, 1)
 
-    # 생성된 이미지 정보
-    img_str = img_dict.get("images")[0].get('image')
+#     # 생성된 이미지 정보
+#     img_str = img_dict.get("images")[0].get('image')
 
-    # base64 string을 이미지로 변환
-    # img = kakaoapi.string_to_image(base64_string = img_str, mode = 'RGBA')
+#     # base64 string을 이미지로 변환
+#     # img = kakaoapi.string_to_image(base64_string = img_str, mode = 'RGBA')
 
-    return img_str
+#     return img_str
